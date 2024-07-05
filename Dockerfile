@@ -7,7 +7,7 @@ COPY ["api_form.csproj", "./"]
 RUN dotnet restore "api_form.csproj"
 
 # Copy everything else and build
-COPY . ./
+COPY publish/. ./
 RUN dotnet publish -c Release -o out --no-restore
 
 # Use the official .NET runtime image as the runtime environment
